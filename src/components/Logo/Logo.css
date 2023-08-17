@@ -1,0 +1,23 @@
+.Tilt {
+    font-family: sans-serif;
+    font-size:x-large;
+    font-stretch: condensed;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(89deg, #FF5EDF 0%, #0466de 100%);
+}
+
+.center {
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
