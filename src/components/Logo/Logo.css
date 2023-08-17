@@ -4,9 +4,9 @@
     font-stretch: condensed;
     font-weight: bold;
     color: white;
-    background: linear-gradient(89deg, #FF5EDF 0%, #0466de 100%);
+    background: linear-gradient(89deg, #b81998 0%, #0466de 100%);
 }
-
+/* FF5EDF */
 .center {
     margin: auto;
     padding: 10px;
