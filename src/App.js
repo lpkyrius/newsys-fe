@@ -5,17 +5,17 @@ import Logo from './components/Logo/Logo';
 import './App.css';
 import Register from "./components/Register/Register";
 
-const initialState = {
-  input: '',
-      route: 'signin',
-      isSignedIn: false,
-      user: {
-        id: '',
-        name: '',
-        email: '',
-        joined: '' 
-      }
-}
+// const initialState = {
+//   input: '',
+//       route: 'signin',
+//       isSignedIn: false,
+//       user: {
+//         id: '',
+//         name: '',
+//         email: '',
+//         joined: '' 
+//       }
+// }
 
 class App extends Component {
   constructor() {
@@ -24,6 +24,16 @@ class App extends Component {
       route: 'signin'
     }
   }
+
+  onRouteChange = (route) => {
+    // if (route === 'signout') {
+    //   this.setState(initialState)
+    // } else if (route === 'home') {
+    //   this.setState({isSignedIn: true})
+    // }
+    this.setState({route: route});
+  }
+
   render() {
     const { isSignedIn, imageUrl, route, box } = this.state; 
     return (
@@ -32,12 +42,17 @@ class App extends Component {
         <Logo />
         {   route === 'home' 
           ? <div>
-              
+              <p className='f3 link dim white pa3 pointer'>Texto da Home</p>
             </div>
           : (
+
               route === 'signin'
               ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-              : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+              : <div>
+                <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+                <p className='f3 link dim white pa3 pointer'>Texto da Home</p>
+                </div>
+                
             )
         }
       </div>
