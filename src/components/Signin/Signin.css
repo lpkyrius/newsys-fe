@@ -46,10 +46,10 @@
     font-weight: 600;
 }
 
-.input-reset {
+/* .input-reset {
     -webkit-appearance: none;
        -moz-appearance: none;
-}
+} */
 
 .input-reset::-moz-focus-inner {
     border: 0;
@@ -57,7 +57,7 @@
 }
 
 .lh-copy {
-    line-height: 3.5;
+    line-height: 2.5;
 }
 
 .link {
