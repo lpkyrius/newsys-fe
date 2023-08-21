@@ -46,7 +46,7 @@ class App extends Component {
               <p className='f3 link dim white pa3 pointer'>Texto da Home</p>
             </div>
           : (
-              route === 'signin'
+              route === 'signin' || route === 'signout'
               ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
               : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
             )
