@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navigation from './components/Navigation/Navigation';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
+import Main from './components/Main/Main';
 import Logo from './components/Logo/Logo';
 import './App.css';
 
@@ -22,8 +23,28 @@ class App extends Component {
     super();
     this.state = {
       route: 'signin',
-      isSignedIn: false
+      isSignedIn: false,
+      user: {
+        id: '',
+        name: '',
+        email: '', 
+        created_at: new Date(),
+        updated_at: new Date(),
+        verified: false
+      }
     }
+  }
+
+  loadUser = (data) => {
+    this.setState({user: {
+      id: data.id,
+      name: data.name,
+      email: data.email, 
+      created_at: data.created_at,
+      updated_at: data.updated_at,
+      verified: data.verified
+      }
+    })
   }
 
   onRouteChange = (route) => {
@@ -43,7 +64,7 @@ class App extends Component {
         <Logo />
         {   route === 'home' 
           ? <div>
-              <p className='f3 link dim white pa3 pointer'>Texto da Home</p>
+              <Main user={this.state.user} />
             </div>
           : (
               route === 'signin' || route === 'signout'
