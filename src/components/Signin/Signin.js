@@ -1,6 +1,6 @@
 import React from 'react';
 import './Signin.css';
-
+import {notify} from '../ToastContainer/ToastContainer';
 class Signin extends React.Component {
     constructor(props) {
         super(props);
@@ -33,6 +33,8 @@ class Signin extends React.Component {
                 if (user.id) {
                     this.props.loadUser(user);
                     this.props.onRouteChange('home');
+                } else {
+                    notify('warning',user.error);
                 }
             })
     }
@@ -77,7 +79,7 @@ class Signin extends React.Component {
                             </div>
                             <div className="lh-copy mt3">
                                 <p onClick={() => onRouteChange('register')} className="f6 link dim black db pointer">Registrar-se</p>
-                                <a href="#0" className="f6 link dim black db">Esqueceu a senha?</a>
+                                <a href="http://localhost:8000/forgot_password" className="f6 link dim black db">Esqueceu a senha?</a>
                             </div>
                         </div>
                     </main>        

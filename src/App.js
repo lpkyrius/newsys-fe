@@ -4,7 +4,9 @@ import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
 import Main from './components/Main/Main';
 import Logo from './components/Logo/Logo';
+import {ToastContainer} from './components/ToastContainer/ToastContainer';
 import './App.css';
+
 
 const initialState = {
   input: '',
@@ -72,6 +74,18 @@ class App extends Component {
               : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
             )
         }
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </div>
     );
   }  

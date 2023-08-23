@@ -4,7 +4,7 @@ const Main = ({ user }) => {
     return (
         <div>
             <div className='white f3'>
-                {`User connected: ${user.name}`}
+                {`Olá, ${user.name}`}
             </div>
         </div>
     )

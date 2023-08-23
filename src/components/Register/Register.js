@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Signin/Signin.css';
-
+import {notify} from '../ToastContainer/ToastContainer';
 class Register extends React.Component {
 
     constructor(props) {
@@ -49,13 +49,11 @@ class Register extends React.Component {
             .then(Response => Response.json())
             .then(user => { 
                 if (user.id) {
-                    console.log('debug success onSubmitRegister ',user);
-                    console.log('Confirme seu cadastro na mensagem enviada para o seu email e faça o login no New SAVIC!')
-                    
+                    notify('success','Por favor, confirme seu cadastro na mensagem enviada para o seu email e faça o login no New SAVIC!');
+                    this.props.onRouteChange('signin');
                 } else {
-                    console.log('debug failure onSubmitRegister ',user);
+                    notify('warning',user.error);
                 }
-                this.props.onRouteChange('signin');
             })
         
     }
