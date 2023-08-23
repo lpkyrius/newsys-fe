@@ -4,6 +4,7 @@ import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
 import Main from './components/Main/Main';
 import Logo from './components/Logo/Logo';
+import IntroText from './components/IntroText/IntroText';
 import {ToastContainer} from './components/ToastContainer/ToastContainer';
 import './App.css';
 
@@ -64,16 +65,24 @@ class App extends Component {
       <div className='App'>
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
         <Logo />
-        {   route === 'home' 
-          ? <div>
+        <div className="container">
+          {route === 'home' ? (
+            <div>
               <Main user={this.state.user} />
             </div>
-          : (
-              route === 'signin' || route === 'signout'
-              ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-              : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-            )
-        }
+          ) : (
+            <div className="SideBySideContainer">
+              <IntroText />
+              <div>
+                {route === 'signin' || route === 'signout' ? (
+                  <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+                ) : (
+                  <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+                )}
+              </div>
+            </div>
+          )}
+        </div>
         <ToastContainer
           position="top-right"
           autoClose={2000}

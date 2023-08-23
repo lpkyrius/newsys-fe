@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.SideBySideContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90%;
+  margin-top: 0px; /* Adjust the margin as needed */
+}
+
+.MainText {
+  max-width: 30em;
+  text-align: left;
+}
