@@ -37,11 +37,19 @@
   }
 }
 
+.SideBySideContainerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 0px; /* Adjust the margin as needed */
+}
+
 .SideBySideContainer {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 90%;
+  width: 100%;
   margin-top: 0px; /* Adjust the margin as needed */
 }
 
@@ -49,3 +57,4 @@
   max-width: 30em;
   text-align: left;
 }
+

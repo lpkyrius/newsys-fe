@@ -43,12 +43,12 @@ class Signin extends React.Component {
         const { onRouteChange } = this.props;
         return (
             <div className='SignIn-Gen right'>
-            <article className="card br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
+            <article className="br3 ba b--black-10 mv4 w-100 w-50-m mw6 shadow-5 center">
                 <div className='SignIn-inner'>
                     <main className="pa4 black-80">
                         <div className="measure">
                             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-                            <legend className="f2 fw6 ph0 mh0">Entrar no SAVIC</legend>
+                            <legend className="f3 fw6 ph0 mh0">Informe seus dados para entrar</legend>
                             <div className="mt3">
                                 <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
                                 <input 

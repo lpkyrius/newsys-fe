@@ -1,3 +1,10 @@
+.SignIn-Gen{
+    width: 100%;
+    height: 100%;
+    padding: 0 50px;
+    margin: 40px auto;
+}
+
 .SignIn-inner {
     font-family: sans-serif;
     font-size:x-large;
@@ -80,6 +87,10 @@
 .link:focus {
     transition: color .15s ease-in;
     outline: 1px dotted currentColor;
+}
+
+.mw5 {
+    max-width: 16rem;
 }
 
 .w-100 {
@@ -209,4 +220,3 @@
 .pointer:hover {
     cursor: pointer;
 }
-

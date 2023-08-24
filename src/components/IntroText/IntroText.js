@@ -4,9 +4,9 @@ const IntroText = () => {
 
     return (
         <div className="MainText" data-scrollax-parent="true">
-            <span className="f4 link white underline pa3">A paz de Jesus!</span>
-            <h1 className="f1 link white underline pa3">Sistema Integrado dos Grupos de Oração e Servos da RCC</h1>
-            <h6 className="f5 link white underline pa3">Registre-se agora mesmo e faça o cadastro do seu Grupo de Oração</h6>
+            <span className="f4 link white pa3">A paz de Jesus!</span>
+            <h1 className="f1 link white pa3">Sistema Integrado dos Grupos de Oração e Servos da RCC</h1>
+            <h6 className="f5 link white pa3">Registre-se agora mesmo e faça o cadastro do seu Grupo de Oração</h6>
         </div>
     );
 }

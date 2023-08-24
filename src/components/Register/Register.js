@@ -61,7 +61,7 @@ class Register extends React.Component {
     render() {
         return (
             <div className='SignIn-Gen right'>
-            <article className="card br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
+            <article className="card br3 ba b--black-10 w-100 w-50-m mw6 shadow-5 center">
                 <div className='SignIn-inner'>
                     <main className="pa4 black-80">
                         <div className="measure">
