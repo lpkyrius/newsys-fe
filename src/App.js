@@ -74,7 +74,9 @@ class App extends Component {
             </div>
           ) : (
             <div className="SideBySideContainer">
-              <IntroText />
+              <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+                <IntroText />
+              </div>
               <div>
                 {route === 'signin' || route === 'signout' ? (
                   <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} />

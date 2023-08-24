@@ -56,8 +56,10 @@
 .MainText {
   max-width: 30em;
   text-align: left;
+  margin-top: 0px;
 }
 
+/* Block - IntroText animation */
 .lineUp {
   animation: 2s anim-lineUp ease-out; 
   /* animation: 2s anim-lineUp ease-out infinite;  */
@@ -79,3 +81,4 @@
     transform: translateY(0%);
   }
 }
+/* End Block - IntroText animation */

@@ -52,7 +52,7 @@ class Register extends React.Component {
                     notify('success','Por favor, confirme seu cadastro na mensagem enviada para o seu email e faça o login no New SAVIC!');
                     this.props.onRouteChange('signin');
                 } else {
-                    notify('warning',user.error);
+                    notify('info',user.error);
                 }
             })
         

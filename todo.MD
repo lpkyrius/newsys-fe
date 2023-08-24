@@ -4,5 +4,5 @@
 - [x] [275. Building Our Components]('https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/learn/lecture/8803510#questions')
 - [x] [285. Sign In Form And Routing]('https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/learn/lecture/8803528#questions')
 - [x] [317. Connecting To Our Front-End]('https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/learn/lecture/8820894#questions')
-- [ ] Define how to notify users (SignIn & Register) error & success messages
+- [x] Define how to notify users (SignIn & Register) error & success messages
 - [ ] Remove .,- from Frontend CPF

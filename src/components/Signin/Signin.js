@@ -34,7 +34,7 @@ class Signin extends React.Component {
                     this.props.loadUser(user);
                     this.props.onRouteChange('home');
                 } else {
-                    notify('warning',user.error);
+                    notify('info',user.error);
                 }
             })
     }
@@ -77,9 +77,10 @@ class Signin extends React.Component {
                                 value="Entrar" 
                             />
                             </div>
-                            <div className="lh-copy mt3">
-                                <p onClick={() => onRouteChange('register')} className="f6 link dim black db pointer">Registrar-se</p>
-                                <a href="http://localhost:8000/forgot_password" className="f6 link dim black db">Esqueceu a senha?</a>
+                            <div className="lh-copy mt3 pv2">
+                                <hr></hr>
+                                <p onClick={() => onRouteChange('register')} className="f6 link dim black grow db pointer">Registrar-se</p>
+                                <a href="http://localhost:8000/forgot_password" className="f6 link dim black grow db">Esqueceu a senha?</a>
                             </div>
                         </div>
                     </main>        
