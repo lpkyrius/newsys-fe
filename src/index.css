@@ -6,6 +6,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(89deg, #FF5EDF 0%, #04c8de 100%);
   background-image: url("../images/bg_1.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+*{
+  margin: 0;
+  padding: 0;
 }
 
 /* code {
