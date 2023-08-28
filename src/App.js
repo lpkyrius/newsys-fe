@@ -5,6 +5,7 @@ import Register from './components/Register/Register';
 import Main from './components/Main/Main';
 import Logo from './components/Logo/Logo';
 import IntroText from './components/IntroText/IntroText';
+// import Profile from './components/Profile/Profile';
 import {ToastContainer} from './components/ToastContainer/ToastContainer';
 import './App.css';
 
@@ -71,6 +72,7 @@ class App extends Component {
           {route === 'home' ? (
             <div>
               <Main user={this.state.user} />
+              
             </div>
           ) : (
             <div className="SideBySideContainer">

@@ -78,7 +78,7 @@ class Signin extends React.Component {
                             />
                             </div>
                             <div className="lh-copy mt3 pv2">
-                                <hr></hr>
+                                <hr></hr><br></br>
                                 <p onClick={() => onRouteChange('register')} className="f6 link dim black grow db pointer">Registrar-se</p>
                                 <a href="http://localhost:8000/forgot_password" className="f6 link dim black grow db">Esqueceu a senha?</a>
                             </div>
