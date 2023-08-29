@@ -1,6 +1,16 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+// enhance this ToastContainer through TypeScript
+// const kinds = ['info', 'error', 'success', 'warning'];
+// type messageKinds = (typeof kinds)[number];
+// interface messageOptions {
+//     kind: messageKinds,
+//     message: String,
+// }
+
+// const notify = (kind: messageKinds) => {
+
 const notify = (type = 'info', message) => {
     
     let toastParameters = {
