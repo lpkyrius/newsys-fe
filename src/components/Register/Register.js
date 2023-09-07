@@ -1,138 +1,133 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Signin/Signin.css';
-import {notify} from '../ToastContainer/ToastContainer';
-class Register extends React.Component {
+import { notify } from '../ToastContainer/ToastContainer';
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: '',
-            email: '',
-            cpf: '',
-            password: '',
-            password2: ''            
-        }
+function Register(props) {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        cpf: '',
+        password: '',
+        password2: '',
+    });
+
+    const [showPassword, setShowPassword] = useState(false);
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData({ ...formData, [name]: value });
     }
 
-    onNameChange = (event) => {
-        this.setState({ name: event.target.value})
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
     }
 
-    onEmailChange = (event) => {
-        this.setState({ email: event.target.value})
-    }
-
-    onCpfChange = (event) => {
-        this.setState({ cpf: event.target.value})
-    }
-
-    onPasswordChange = (event) => {
-        this.setState({ password: event.target.value})
-    }
-
-    onPassword2Change = (event) => {
-        this.setState({ password2: event.target.value})
-    }
-
-    onSubmitSRegister = ({ onRouteChange }) => {
+    const onSubmitRegister = () => {
         fetch('http://localhost:8000/register', {
             method: 'post',
-            headers: {'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                name: this.state.name,
-                email: this.state.email,
-                cpf: this.state.cpf,
-                password: this.state.password,
-                password2: this.state.password2
-            })
+                name: formData.name,
+                email: formData.email,
+                cpf: formData.cpf,
+                password: formData.password,
+                password2: formData.password2,
+            }),
         })
-            .then(Response => Response.json())
-            .then(user => { 
+            .then((response) => response.json())
+            .then((user) => {
                 if (user.id) {
-                    notify('success','Por favor, confirme seu cadastro na mensagem enviada para o seu email e faça o login no New SAVIC!');
-                    this.props.onRouteChange('signin');
+                    notify('success', 'Por favor, confirme seu cadastro na mensagem enviada para o seu email e faça o login no New SAVIC!');
+                    props.onRouteChange('signin');
                 } else {
-                    notify('info',user.error);
+                    notify('info', user.error);
                 }
-            })
-        
+            });
     }
 
-    render() {
-        return (
-            <div className='SignIn-Gen right'>
+    return (
+        <div className='SignIn-Gen right'>
             <article className="card br3 ba b--black-10 w-100 w-50-m mw6 shadow-5 center">
                 <div className='SignIn-inner'>
                     <main className="pa4 black-80">
                         <div className="measure">
                             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-                            <legend className="f3 fw6 ph0 mh0">Faça o seu cadastro no SAVIC</legend>
-                            <div className="mt3">
-                                <label className="db fw6 lh-copy f6" htmlFor="name">Nome</label>
-                                <input 
-                                    className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 f6" 
-                                    type="text" 
-                                    name="name"  
-                                    id="name"
-                                    onChange={this.onNameChange} 
-                                />
-                            </div>
-                            <div className="mt3">
-                                <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
-                                <input 
-                                    className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 f6" 
-                                    type="email" 
-                                    name="email-address"  
-                                    id="email-address" 
-                                    onChange={this.onEmailChange}
-                                />
-                            </div>
-                            <div className="mt3">
-                                <label className="db fw6 lh-copy f6" htmlFor="cpf">CPF</label>
-                                <input 
-                                    className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 f6" 
-                                    type="text" 
-                                    name="cpf"  
-                                    id="cpf"
-                                    onChange={this.onCpfChange} 
-                                />
-                            </div>
-                            <div className="mv3">
-                                <label className="db fw6 lh-copy f6" htmlFor="password">Senha</label>
-                                <input 
-                                    className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 f6" 
-                                    type="password" 
-                                    name="password"  
-                                    id="password"
-                                    onChange={this.onPasswordChange} 
-                                />
-                            </div>
-                            <div className="mv3">
-                                <label className="db fw6 lh-copy f6" htmlFor="password2">Confirme sua Senha</label>
-                                <input 
-                                    className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 f6" 
-                                    type="password" 
-                                    name="password2"  
-                                    id="password2"
-                                    onChange={this.onPassword2Change} 
-                                />
-                            </div>
+                                <legend className="f3 fw6 ph0 mh0">Faça o seu cadastro no SAVIC</legend>
+                                <div className="mt3">
+                                    <label className="db fw6 lh-copy f6" htmlFor="name">Nome</label>
+                                    <input
+                                        className="pa2 input-reset ba bg-transparent hover-bg-blue hover-white w-100 f6"
+                                        type="text"
+                                        name="name"
+                                        id="name"
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                                <div className="mt3">
+                                    <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
+                                    <input
+                                        className="pa2 input-reset ba bg-transparent hover-bg-blue hover-white w-100 f6"
+                                        type="email"
+                                        name="email"
+                                        id="email-address"
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                                <div className="mt3">
+                                    <label className="db fw6 lh-copy f6" htmlFor="cpf">CPF</label>
+                                    <input
+                                        className="pa2 input-reset ba bg-transparent hover-bg-blue hover-white w-100 f6"
+                                        type="text"
+                                        name="cpf"
+                                        id="cpf"
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                                <div className="mv3">
+                                    <label className="db fw6 lh-copy f6" htmlFor="password">Senha</label>
+                                    <input
+                                        className="b pa2 input-reset ba bg-transparent hover-bg-blue hover-white w-100 f6"
+                                        type={showPassword ? 'text' : 'password'} // Toggle password visibility
+                                        name="password"
+                                        id="password"
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                                <div className="mv3">
+                                    <label className="db fw6 lh-copy f6" htmlFor="password2">Confirme sua Senha</label>
+                                    <input
+                                        className="b pa2 input-reset ba bg-transparent hover-bg-blue hover-white w-100 f6"
+                                        type={showPassword ? 'text' : 'password'} // Toggle password visibility
+                                        name="password2"
+                                        id="password2"
+                                        onChange={handleChange}
+                                    />
+                                </div>
                             </fieldset>
                             <div className="">
-                            <input
-                                onClick={this.onSubmitSRegister} 
-                                className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
-                                type="submit" 
-                                value="Enviar" 
-                            />
+                                <input
+                                    onClick={onSubmitRegister}
+                                    className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+                                    type="submit"
+                                    value="Enviar"
+                                />
                             </div>
                         </div>
-                    </main>        
+                        <br></br>
+                        <div className="password-toggle">
+                            <input
+                                type="checkbox"
+                                id="showPassword"
+                                checked={showPassword}
+                                onChange={togglePasswordVisibility}
+                            />
+                            <label className="f6 black db" htmlFor=" showPassword">Mostrar senha</label>
+                        </div>                        
+                    </main>
                 </div>
             </article>
-            </div>
-        );    
-    }
+        </div>
+    );
 }
 
 export default Register;

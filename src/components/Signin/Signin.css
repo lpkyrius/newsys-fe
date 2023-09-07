@@ -122,6 +122,14 @@
 }
 
 .hover-bg-black:focus {
+    background-color: #8091cf;
+}
+
+.hover-bg-blue:hover {
+    background-color: #8091cf;
+}
+
+.hover-bg-blue:focus {
     background-color: #000;
 }
 
@@ -219,4 +227,10 @@
 
 .pointer:hover {
     cursor: pointer;
+}
+
+.password-toggle {
+    display: flex;
+    justify-content: center;
+    column-gap: 5px;
 }
