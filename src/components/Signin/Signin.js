@@ -27,7 +27,7 @@ class Signin extends React.Component {
     }
 
     onSubmitSignin = () => {
-        fetch('http://localhost:8000/signin', {
+        fetch('http://localhost:8000/users/signin', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -91,7 +91,7 @@ class Signin extends React.Component {
                                 <div className="lh-copy mt3 pv2">
 
                                     <p onClick={() => onRouteChange('register')} className="f6 link dim black grow db pointer">Registrar-se</p>
-                                    <a href="http://localhost:8000/forgot_password" className="f6 link dim black grow db" target="_blank" rel="noreferrer noopener">Esqueceu a senha?</a>
+                                    <a href="http://localhost:8000/users/forgot-password" className="f6 link dim black grow db" target="_blank" rel="noreferrer noopener">Esqueceu a senha?</a>
                                 </div>
                                 <div className="password-toggle">
                                     <input

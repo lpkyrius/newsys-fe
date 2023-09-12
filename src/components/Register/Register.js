@@ -23,7 +23,7 @@ function Register(props) {
     }
 
     const onSubmitRegister = () => {
-        fetch('http://localhost:8000/register', {
+        fetch('http://localhost:8000/users/register', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
