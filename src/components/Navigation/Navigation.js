@@ -27,30 +27,27 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
         <div>
             {isSignedIn ? (
                 <div>
-                    {/* <nav className='NavBar' style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                        <p onClick={() => onRouteChange('signout')} className='f4 link dim white underline pa3 pointer'>Sair</p>
-                    </nav> */}
                     <div className='menu-container' ref={menuRef}>
                         <div className='menu-trigger' onClick={() => setOpen(!open)}>
                             <img src={user} alt="" />
                         </div>
                         <div className={`dropdown-menu ${open ? 'active' : 'inactive'}`} >
-                            <h3>NewSAVIC<br /><span>RCC Brasil</span></h3>
+                            <h3>NewSYS<br /><span>YourCompany</span></h3>
                             <ul>
-                                <DropdownItem img={user} text={"Perfil"} />
-                                <DropdownItem img={edit} text={"Editar Perfil"} />
-                                <DropdownItem img={inbox} text={"Mensagens"} />
-                                <DropdownItem img={settings} text={"Configurações"} />
-                                <DropdownItem img={help} text={"Ajuda"} />
-                                <DropdownItem img={logout} text={"Sair"} onRouteChange={onRouteChange} />
+                                <DropdownItem img={user} text={"Profile"} />
+                                <DropdownItem img={edit} text={"Edit Perfile"} />
+                                <DropdownItem img={inbox} text={"Messages"} />
+                                <DropdownItem img={settings} text={"Settings"} />
+                                <DropdownItem img={help} text={"Help"} />
+                                <DropdownItem img={logout} text={"Log Out"} onRouteChange={onRouteChange} />
                             </ul>
                         </div>
                     </div>
                 </div>
             ) : (
                 <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <p onClick={() => onRouteChange('signin')} className='f4 link dim white underline pa3 pointer'>Entrar</p>
-                    <p onClick={() => onRouteChange('register')} className='f4 link dim white underline pa3 pointer'>Registrar-se</p>
+                    <p onClick={() => onRouteChange('signin')} className='f4 link dim white underline pa3 pointer'>Sign In</p>
+                    <p onClick={() => onRouteChange('register')} className='f4 link dim white underline pa3 pointer'>Register</p>
                 </nav>
             )}
         </div>
@@ -60,7 +57,7 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
 function DropdownItem(props) {
     return (
         <li className='dropdownItem dim pa3 pointer' onClick={() => {
-            if (props.text === "Sair") {
+            if (props.text === "Log Out") {
                 props.onRouteChange('signout');
             }
         }}>

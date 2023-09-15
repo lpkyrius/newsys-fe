@@ -23,26 +23,31 @@ function Register(props) {
     }
 
     const onSubmitRegister = () => {
-        fetch('http://localhost:8000/users/register', {
-            method: 'post',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                name: formData.name,
-                email: formData.email,
-                cpf: formData.cpf,
-                password: formData.password,
-                password2: formData.password2,
-            }),
-        })
-            .then((response) => response.json())
-            .then((user) => {
-                if (user.id) {
-                    notify('success', 'Por favor, confirme seu cadastro na mensagem enviada para o seu email e faça o login no New SAVIC!');
-                    props.onRouteChange('signin');
-                } else {
-                    notify('info', user.error);
-                }
-            });
+
+        if (formData.password !== formData.password2) {
+            notify(`info`, `Password and Password Confirmation don't match`);
+        } else {
+            fetch('http://localhost:8000/users/register', {
+                method: 'post',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    cpf: formData.cpf,
+                    password: formData.password,
+                    password2: formData.password2,
+                }),
+            })
+                .then((response) => response.json())
+                .then((user) => {
+                    if (user.id) {
+                        notify('success', 'Please, check your email to confirm your register!');
+                        props.onRouteChange('signin');
+                    } else {
+                        notify('info', user.error);
+                    }
+                });
+        };
     }
 
     return (
@@ -52,14 +57,15 @@ function Register(props) {
                     <main className="pa4 black-80">
                         <div className="measure">
                             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-                                <legend className="f3 fw6 ph0 mh0">Faça o seu cadastro no SAVIC</legend>
+                                <legend className="f3 fw6 ph0 mh0">Register Here To Access the Data</legend>
                                 <div className="mt3">
-                                    <label className="db fw6 lh-copy f6" htmlFor="name">Nome</label>
+                                    <label className="db fw6 lh-copy f6" htmlFor="name">Name</label>
                                     <input
                                         className="pa2 input-reset ba bg-transparent hover-bg-blue hover-white w-100 f6"
                                         type="text"
                                         name="name"
                                         id="name"
+                                        placeholder="Your complete name"
                                         onChange={handleChange}
                                     />
                                 </div>
@@ -70,6 +76,7 @@ function Register(props) {
                                         type="email"
                                         name="email"
                                         id="email-address"
+                                        placeholder="Your email address to confirm your registration"
                                         onChange={handleChange}
                                     />
                                 </div>
@@ -80,26 +87,29 @@ function Register(props) {
                                         type="text"
                                         name="cpf"
                                         id="cpf"
+                                        placeholder="It's a Brazilian doc. but you can use random numbers"
                                         onChange={handleChange}
                                     />
                                 </div>
                                 <div className="mv3">
-                                    <label className="db fw6 lh-copy f6" htmlFor="password">Senha</label>
+                                    <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
                                     <input
                                         className="b pa2 input-reset ba bg-transparent hover-bg-blue hover-white w-100 f6"
                                         type={showPassword ? 'text' : 'password'} // Toggle password visibility
                                         name="password"
                                         id="password"
+                                        placeholder="Enter your password"
                                         onChange={handleChange}
                                     />
                                 </div>
                                 <div className="mv3">
-                                    <label className="db fw6 lh-copy f6" htmlFor="password2">Confirme sua Senha</label>
+                                    <label className="db fw6 lh-copy f6" htmlFor="password2">Password</label>
                                     <input
                                         className="b pa2 input-reset ba bg-transparent hover-bg-blue hover-white w-100 f6"
                                         type={showPassword ? 'text' : 'password'} // Toggle password visibility
                                         name="password2"
                                         id="password2"
+                                        placeholder="Re enter your password"
                                         onChange={handleChange}
                                     />
                                 </div>
@@ -109,7 +119,7 @@ function Register(props) {
                                     onClick={onSubmitRegister}
                                     className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                                     type="submit"
-                                    value="Enviar"
+                                    value="Register"
                                 />
                             </div>
                         </div>
@@ -121,7 +131,7 @@ function Register(props) {
                                 checked={showPassword}
                                 onChange={togglePasswordVisibility}
                             />
-                            <label className="f6 black db" htmlFor=" showPassword">Mostrar senha</label>
+                            <label className="f6 black db" htmlFor=" showPassword">Show Password</label>
                         </div>                        
                     </main>
                 </div>

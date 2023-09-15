@@ -5,12 +5,12 @@ const Main = ({ user }) => {
         <div>
             <br></br>
             <div className='white f3'>
-                {`Olá, ${user.name}`}
+                {`Welcome, ${user.name}`}
             </div>
             <br></br>
             <br></br>
             <div className='white f3'>
-                Aqui entra o menu principal do sistema e toda a navegação pelas diversas telas.
+                <h2>Here comes the main content and options of your system.</h2>
             </div>
         </div>
     )

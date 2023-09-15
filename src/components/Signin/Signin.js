@@ -57,7 +57,7 @@ class Signin extends React.Component {
                         <main className="pa4 black-80">
                             <div className="measure">
                                 <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-                                    <legend className="f3 fw6 ph0 mh0">Informe seus dados para entrar</legend>
+                                    <legend className="f3 fw6 ph0 mh0">Log in to continue your journey</legend>
                                     <div className="mt3">
                                         <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
                                         <input
@@ -69,7 +69,7 @@ class Signin extends React.Component {
                                         />
                                     </div>
                                     <div className="mv3">
-                                        <label className="db fw6 lh-copy f6" htmlFor="password">Senha</label>
+                                        <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
                                         <input
                                             className="b pa2 input-reset ba bg-transparent hover-bg-blue hover-white w-100 f6"
                                             type={showPassword ? 'text' : 'password'} // Toggle password visibility
@@ -85,13 +85,13 @@ class Signin extends React.Component {
                                         onClick={this.onSubmitSignin}
                                         className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                                         type="submit"
-                                        value="Entrar"
+                                        value="Sign in"
                                     />
                                 </div>
                                 <div className="lh-copy mt3 pv2">
 
-                                    <p onClick={() => onRouteChange('register')} className="f6 link dim black grow db pointer">Registrar-se</p>
-                                    <a href="http://localhost:8000/users/forgot-password" className="f6 link dim black grow db" target="_blank" rel="noreferrer noopener">Esqueceu a senha?</a>
+                                    <p onClick={() => onRouteChange('register')} className="f6 link dim black grow db pointer">Register</p>
+                                    <a href="http://localhost:8000/users/forgot-password" className="f6 link dim black grow db" target="_blank" rel="noreferrer noopener">Forgot you password?</a>
                                 </div>
                                 <div className="password-toggle">
                                     <input
@@ -100,7 +100,7 @@ class Signin extends React.Component {
                                         checked={showPassword}
                                         onChange={this.togglePasswordVisibility}
                                     />
-                                    <label className="f6 black db" htmlFor="showPassword">Mostrar senha</label>
+                                    <label className="f6 black db" htmlFor="showPassword">Show Password</label>
                                 </div>
                             </div>
                         </main>
