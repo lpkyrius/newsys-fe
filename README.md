@@ -1,4 +1,15 @@
-# Getting Started with Create React App
+# newsys-fe
+
+### NewSYS FE (Frontend) for your Company
+Check also NewSYS APIs (Backend) for your Company
+## Complete User Registration:
+- Register
+- Email verification with expiration date
+- Reset / Forgot Password option
+- Update user data
+- Delete user
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
