@@ -13,7 +13,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with: 
+        node-version: 18
+    - name: Install Dependencies  
+      run: npm install 
+    - name: Build React
+      run: npm run build
     - name: logindocker
       run: docker login -u lpkyrius -p dckr_pat_R5UZfw9TgETYTAPq8EWPxH7ruu4
     - name: Build the Docker image
