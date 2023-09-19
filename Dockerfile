@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY package*.json ./ 
 
+RUN npm install -D babel-loader @babel/core @babel/preset-env webpack
+
 RUN npm install --omit=dev
 
 COPY . ./
