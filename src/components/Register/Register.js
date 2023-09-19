@@ -27,7 +27,7 @@ function Register(props) {
         if (formData.password !== formData.password2) {
             notify(`info`, `Password and Password Confirmation don't match`);
         } else {
-            fetch('http://localhost:8000/users/register', {
+            fetch(`${ process.env.REACT_APP_SERVER_ADDRESS }users/register`, {
                 method: 'post',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

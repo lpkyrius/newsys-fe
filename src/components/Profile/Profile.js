@@ -22,6 +22,7 @@ class Profile extends React.Component {
 
     onSubmitSignin = () => {
         // fetch('http://localhost:8000/users/signin', {
+        // fetch('users/signin', {
         //     method: 'post',
         //     headers: {'Content-Type': 'application/json'},
         //     body: JSON.stringify({
