@@ -9,6 +9,10 @@ Check also [NewSYS APIs (Backend) for your Company](https://github.com/lpkyrius/
 - Update user data
 - Delete user
 
+Also
+- Docker settings
+- Link to the Backend Swagger API Documentation
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
