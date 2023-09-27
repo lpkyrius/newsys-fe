@@ -35,7 +35,7 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
                             <h3>NewSYS<br /><span>YourCompany</span></h3>
                             <ul>
                                 <DropdownItem img={user} text={"Profile"} />
-                                <DropdownItem img={edit} text={"Edit Perfile"} />
+                                <DropdownItem img={edit} text={"Edit Profile"} />
                                 <DropdownItem img={inbox} text={"Messages"} />
                                 <DropdownItem img={settings} text={"Settings"} />
                                 <DropdownItem img={help} text={"Help"} />
