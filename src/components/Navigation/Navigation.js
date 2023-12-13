@@ -22,7 +22,7 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
             document.removeEventListener("mousedown", handler);
         };
     }, [isSignedIn]);
-
+    
     return (
         <div>
             {isSignedIn ? (

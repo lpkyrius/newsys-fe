@@ -36,12 +36,12 @@ class Signin extends React.Component {
             }),
         })
         .then((response) => response.json())
-        .then((user) => {
-            if (user.id) {
-                this.props.loadUser(user);
+        .then((userData) => {
+            if (userData.user) {
+                this.props.loadUser(userData.user);
                 this.props.onRouteChange('home');
             } else {
-                notify('info', user.error);
+                notify('info', userData.error);
             }
         });
     }

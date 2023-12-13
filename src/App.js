@@ -72,7 +72,6 @@ class App extends Component {
           {route === 'home' ? (
             <div>
               <Main user={this.state.user} />
-              
             </div>
           ) : (
             <div className="SideBySideContainer">
